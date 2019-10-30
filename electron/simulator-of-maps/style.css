@@ -1,0 +1,49 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color:black;
+}
+#coordinates{
+    background-color: rgba(238, 238, 238,0.5);
+    color: #555;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    font-weight:bold;
+    height: 30px;
+    left: calc(100% - 14vw);
+    position: absolute;
+    top: 50px;
+    width: 120px;
+    z-index: 2000;
+}
+#loading{
+    animation-duration: 3s;
+    animation-name: fadeout;
+    color: #ccc;
+    font-size: 180%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#map{
+    background-color: black;
+    /*cursor: -webkit-grab;*/
+    height: -webkit-fill-available;
+    user-select: all !important;/*it avoids seeing map transparent on drag*/
+    width: -webkit-fill-available;
+}
+.tile{
+    background-size: contain;
+    position: fixed/*absolute*/;
+    transform: translate(-50%,-50%);
+}
+@keyframes fadein {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+@keyframes fadeout {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

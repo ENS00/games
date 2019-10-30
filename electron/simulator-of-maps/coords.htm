@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Choose coordinates</title>
+    <style>
+    body {
+        overflow: hidden;
+        margin: 0;
+    }
+    #coordinates{
+        background-color: rgba(238, 238, 238,0.5);
+        color: #555;
+        display: flex;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5em;
+        font-weight:bold;
+        height: 30px;
+        left: calc(100% - 14vw);
+        position: absolute;
+        top: 50px;
+        width: 120px;
+        z-index: 2000;
+    }
+    #coordX{
+        background-color: #eee;
+        border: 1px solid #333;
+        color: #333;
+        flex:2;
+        height: 30px;
+        text-align: center;
+        width: 30px;
+    }
+    #coordY{
+        background-color: #eee;
+        border: 1px solid #333;
+        color: #333;
+        flex:2;
+        height: 30px;
+        text-align: center;
+        width: 30px;
+    }
+    #content{
+        width: fit-content;
+        height: fit-content;
+        margin: 50% auto;
+    }
+    </style>
+</head>
+<body>
+    <div style="height: -webkit-fill-available;display: flex">
+        <div style="margin:auto">
+            <input type="number" id="coordX" value="0">:<input type="number" id="coordY" value="0">
+            <button id='confirm'>OK</button>
+        </div>
+    </div>
+    <script>
+        require('./coords.js')
+    </script>
+</body>
+</html>

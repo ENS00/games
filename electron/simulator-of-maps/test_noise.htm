@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Noise</title>
+</head>
+<body>
+    <canvas id='test_noise'></canvas>
+    <script src='./libraries/perlin.js'></script>
+    <script>
+        let canvas = document.getElementById('test_noise');
+        let ctx = canvas.getContext('2d');
+        let map=(val,min=0,max=1,pref_min=0,pref_max=100) => {
+            if(pref_min<pref_max && min<max && val<=max)
+                return (val-min)/(max-min)*(pref_max-pref_min)+pref_min;
+        }
+        canvas.width=600;
+        canvas.height=600;
+        noise.seed(Math.random());
+        for(let y=0;y<canvas.height;y++)
+        {
+            for(let x=0;x<canvas.width;x++)
+            {
+                let value = Math.round(map(noise.simplex2(x/100,y/100),-1,1,0,15));
+                let color = value.toString(16);
+                ctx.beginPath()
+                ctx.strokeStyle='#'+color+color+color;
+                ctx.rect(x,y,1,1);
+                ctx.stroke();
+            }
+        }
+    </script>
+</body>
+</html>

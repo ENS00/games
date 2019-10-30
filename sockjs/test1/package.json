@@ -1,0 +1,12 @@
+{
+    "name": "test1",
+    "description": "First practice test of using sockjs library",
+    "authors": "Lorenzo Tomasello",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dependencies": {
+        "fastify": "^2.10.0",
+        "fastify-static": "^2.5.0",
+        "fastify-websocket": "^0.6.0"
+    }
+}

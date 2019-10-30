@@ -1,0 +1,62 @@
+{
+    "map": {
+        "dimensions": {
+            "x":100,
+            "y":100
+        },
+        "seed": "myseed"
+    },
+    "tile": {
+        "dimensions": 128
+    },
+    "tileset": [
+        {
+            "description": "water1",
+            "img": "./assets/tiles/water1.png"
+        },
+        {
+            "description": "water2",
+            "img": "./assets/tiles/water2.png"
+        },
+        {
+            "description": "water3",
+            "img": "./assets/tiles/water3.png"
+        },
+        {
+            "description": "water4",
+            "img": "./assets/tiles/water4.png"
+        },
+        {
+            "description": "sand1",
+            "img": "./assets/tiles/sand1.png"
+        },
+        {
+            "description": "sand2",
+            "img": "./assets/tiles/sand2.png"
+        },
+        {
+            "description": "sand3",
+            "img": "./assets/tiles/sand3.png"
+        },
+        {
+            "description": "sand4",
+            "img": "./assets/tiles/sand4.png"
+        },
+        {
+            "description": "grass4",
+            "img": "./assets/tiles/grass4.png"
+        },
+        {
+            "description": "grass3",
+            "img": "./assets/tiles/grass3.png"
+        },
+        {
+            "description": "grass2",
+            "img": "./assets/tiles/grass2.png"
+        },
+        {
+            "description": "grass1",
+            "img": "./assets/tiles/grass1.png"
+        }
+    ]
+}

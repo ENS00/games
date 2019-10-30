@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head>
+    <style>
+      .box {
+          width: 300px;
+          float: left;
+          margin: 0 20px 0 20px;
+      }
+      .box div, .box input {
+          border: 1px solid;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          width: 100%;
+          padding: 0px;
+          margin: 5px;
+      }
+      .box div {
+          border-color: grey;
+          height: 300px;
+          overflow: auto;
+      }
+      .box input {
+          height: 30px;
+      }
+      h1 {
+          margin-left: 30px;
+      }
+      body {
+          background-color: #F0F0F0;
+          font-family: "Arial";
+      }
+    </style>
+</head>
+<body lang="en">
+    <h1>SockJS Echo example</h1>
+
+    <input id='myinput' value="Type here..."></input>
+    <button id='send'>SEND</button>
+    <div id='result'></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+    var exampleSocket = new WebSocket("ws://localhost:3000/echo");
+    $('#send').on('click',()=>{
+        exampleSocket.send($('#myinput').val());
+    })
+    exampleSocket.onmessage = function (event) {
+        $('#result').text(event.data);
+    }
+    //exampleSocket.close();
+    </script>
+</body>
+</html>

@@ -25,7 +25,7 @@ fastify.get('/echo', { websocket: true }, (connection, req) => {
     connection.socket.send('Il server ha ricevuto: '+message)
   })
   setInterval(()=>{
-    connection.write('we raga')
+    connection.socket.send('we raga')
   },4000);
 });
 

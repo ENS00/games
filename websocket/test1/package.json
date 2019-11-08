@@ -1,6 +1,6 @@
 {
     "name": "test1",
-    "description": "First practice test of using sockjs library",
+    "description": "First practice test of using a websocket library",
     "authors": "Lorenzo Tomasello",
     "version": "1.0.0",
     "main": "server.js",

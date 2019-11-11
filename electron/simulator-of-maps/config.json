@@ -4,59 +4,242 @@
             "x":100,
             "y":100
         },
-        "seed": "myseed"
+        "seed": -8,
+        "biomeWidth": 180,
+        "worldStretching":1,
+        "terrainVariance": 20
     },
     "tile": {
         "dimensions": 128
     },
-    "tileset": [
-        {
+    "tileset": {
+        "0":{
             "description": "water1",
             "img": "./assets/tiles/water1.png"
         },
-        {
+        "1":{
             "description": "water2",
             "img": "./assets/tiles/water2.png"
         },
-        {
+        "2":{
             "description": "water3",
             "img": "./assets/tiles/water3.png"
         },
-        {
+        "3":{
             "description": "water4",
             "img": "./assets/tiles/water4.png"
         },
-        {
+        "4":{
             "description": "sand1",
             "img": "./assets/tiles/sand1.png"
         },
-        {
+        "5":{
             "description": "sand2",
             "img": "./assets/tiles/sand2.png"
         },
-        {
+        "6":{
             "description": "sand3",
             "img": "./assets/tiles/sand3.png"
         },
-        {
+        "7":{
             "description": "sand4",
             "img": "./assets/tiles/sand4.png"
         },
-        {
-            "description": "grass4",
-            "img": "./assets/tiles/grass4.png"
+        "8":{
+            "description": "grassy1",
+            "img": "./assets/tiles/grassy1.png"
         },
-        {
-            "description": "grass3",
-            "img": "./assets/tiles/grass3.png"
+        "9":{
+            "description": "grassy2",
+            "img": "./assets/tiles/grassy2.png"
         },
-        {
+        "10":{
+            "description": "grassy3",
+            "img": "./assets/tiles/grassy3.png"
+        },
+        "11":{
+            "description": "grassy4",
+            "img": "./assets/tiles/grassy4.png"
+        },
+        "12":{
+            "description": "grass1",
+            "img": "./assets/tiles/grass1.png"
+        },
+        "13":{
             "description": "grass2",
             "img": "./assets/tiles/grass2.png"
         },
+        "14":{
+            "description": "grass3",
+            "img": "./assets/tiles/grass3.png"
+        },
+        "15":{
+            "description": "grass4",
+            "img": "./assets/tiles/grass4.png"
+        },
+        "16":{
+            "description": "forest1",
+            "img": "./assets/tiles/forest1.png"
+        },
+        "17":{
+            "description": "forest2",
+            "img": "./assets/tiles/forest2.png"
+        },
+        "18":{
+            "description": "forest3",
+            "img": "./assets/tiles/forest3.png"
+        },
+        "19":{
+            "description": "forest4",
+            "img": "./assets/tiles/forest4.png"
+        },
+        "20":{
+            "description": "snowy1",
+            "img": "./assets/tiles/snowy1.png"
+        },
+        "21":{
+            "description": "snowy2",
+            "img": "./assets/tiles/snowy2.png"
+        },
+        "22":{
+            "description": "snowy3",
+            "img": "./assets/tiles/snowy3.png"
+        },
+        "23":{
+            "description": "snowy4",
+            "img": "./assets/tiles/snowy4.png"
+        },
+        "24":{
+            "description": "snow1",
+            "img": "./assets/tiles/snow1.png"
+        },
+        "25":{
+            "description": "snow2",
+            "img": "./assets/tiles/snow2.png"
+        },
+        "26":{
+            "description": "snow3",
+            "img": "./assets/tiles/snow3.png"
+        },
+        "27":{
+            "description": "snow4",
+            "img": "./assets/tiles/snow4.png"
+        },
+        "28":{
+            "description": "ice1",
+            "img": "./assets/tiles/ice1.png"
+        },
+        "29":{
+            "description": "ice2",
+            "img": "./assets/tiles/ice2.png"
+        },
+        "30":{
+            "description": "ice3",
+            "img": "./assets/tiles/ice3.png"
+        },
+        "31":{
+            "description": "ice4",
+            "img": "./assets/tiles/ice4.png"
+        },
+        "32":{
+            "description": "swamp1",
+            "img": "./assets/tiles/swamp1.png"
+        },
+        "33":{
+            "description": "swamp2",
+            "img": "./assets/tiles/swamp2.png"
+        },
+        "34":{
+            "description": "swamp3",
+            "img": "./assets/tiles/swamp3.png"
+        },
+        "35":{
+            "description": "swamp4",
+            "img": "./assets/tiles/swamp4.png"
+        },
+        "36":{
+            "description": "stone1",
+            "img": "./assets/tiles/stone1.png"
+        },
+        "37":{
+            "description": "stone2",
+            "img": "./assets/tiles/stone2.png"
+        },
+        "38":{
+            "description": "stone3",
+            "img": "./assets/tiles/stone3.png"
+        },
+        "39":{
+            "description": "stone4",
+            "img": "./assets/tiles/stone4.png"
+        },
+        "40":{
+            "description": "mountain1",
+            "img": "./assets/tiles/mountain1.png"
+        },
+        "41":{
+            "description": "mountain2",
+            "img": "./assets/tiles/mountain2.png"
+        },
+        "42":{
+            "description": "mountain3",
+            "img": "./assets/tiles/mountain3.png"
+        },
+        "43":{
+            "description": "mountain4",
+            "img": "./assets/tiles/mountain4.png"
+        },
+        "44":{
+            "description": "magma1",
+            "img": "./assets/tiles/magma1.png"
+        },
+        "45":{
+            "description": "magma2",
+            "img": "./assets/tiles/magma2.png"
+        },
+        "46":{
+            "description": "magma3",
+            "img": "./assets/tiles/magma3.png"
+        },
+        "47":{
+            "description": "magma4",
+            "img": "./assets/tiles/magma4.png"
+        }
+    },
+    "biomes": [
         {
-            "description": "grass1",
-            "img": "./assets/tiles/grass1.png"
+            "name":"ocean",
+            "tileset": [0,1,2,3]
+        },
+        {
+            "name":"swamp",
+            "tileset": [0,1,2,3,32,33,34,35],
+            "objects":[]
+        },
+        {
+            "name":"plains",
+            "tileset": [0,0,1,1,2,2,3,3,4,5,6,7,8,9,10,11,12,12,12,13,13,13,14,14,14,15,15,15],
+            "objects":[]
+        },
+        {
+            "name":"forest",
+            "tileset": [8,9,10,11,16,16,17,17,18,18,19,19],
+            "objects":[]
+        },
+        {
+            "name":"cold",
+            "tileset": [0,1,2,3,28,29,30,31,20,21,22,23,24,25,26,27],
+            "objects":[]
+        },
+        {
+            "name":"mountain",
+            "tileset": [36,36,37,37,38,38,39,39,40,40,41,41,42,42,43,43],
+            "objects":[]
+        },
+        {
+            "name":"volcano",
+            "tileset": [36,36,36,37,37,37,38,38,38,39,39,39,44,45,46,47],
+            "objects":[]
         }
     ]
 }

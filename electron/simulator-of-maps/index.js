@@ -144,7 +144,7 @@ let rendertiles = (rendertype) => {
 					}
 				}
 			}
-//*************************************SI BUGGA MAXXTILES */
+			
 			for (let j = upLimit; j <= downLimit; j++) {
 				for (let i = leftLimit; i <= rightLimit; i++) {
 					moveTile(tiles[i + "," + j]);

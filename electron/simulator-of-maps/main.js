@@ -17,7 +17,7 @@ function createWindow() {
   updateCoordinates=(x,y)=>mainWindow.webContents.send('newCoords', x, y);
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.htm')
+  mainWindow.loadFile('tests/test_svg.htm')//index.htm
 
   let windowCoords;
   let menu = new Menu();
@@ -35,6 +35,10 @@ function createWindow() {
     role: 'togglefullscreen',
     label: 'Fullscreen',
     accelerator: 'F11'
+  })
+  let menuQuit = new MenuItem({
+    role: 'quit',
+    label: 'Quit'
   })
   let menuItem1 = new MenuItem({
     click: function (menuItem, mainWindow) {
@@ -69,6 +73,7 @@ function createWindow() {
   menu.append(menuZoomIn);
   menu.append(menuZoomOut);
   menu.append(menuFullscreen);
+  menu.append(menuQuit);
   mainWindow.setMenu(menu);
 
   mainWindow.on('closed', function () {

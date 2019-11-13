@@ -3,6 +3,10 @@
   "version": "1.1.0",
   "description": "First app with Electron",
   "main": "main.js",
+  "repository": {
+      "type": "javascript",
+      "url": "https://github.com/ENS00/games/tree/master/electron/simulator-of-maps"
+  },
   "scripts": {
     "test": "electron ."
   },
@@ -10,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^6.0.12"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.16"
   }
 }

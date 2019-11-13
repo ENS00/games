@@ -29,10 +29,9 @@ body {
 }
 #map{
     background-color: black;
-    /*cursor: -webkit-grab;*/
-    height: -webkit-fill-available;
+    /*height: -webkit-fill-available; EDITED*/
     user-select: all !important;/*it avoids seeing map transparent on drag*/
-    width: -webkit-fill-available;
+    /*width: -webkit-fill-available; EDITED*/
 }
 .tile{
     background-size: contain;

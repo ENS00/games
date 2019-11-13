@@ -1,7 +1,24 @@
-const ipc = require('electron').ipcRenderer;
-const fs = require('fs');
-const {Tile} = require('./libraries/game.js')
+const ipc = require('electron').ipcRenderer
+const fs = require('fs')
+const {Tile} = require('./libraries/game')
+const SVG=require('@svgdotjs/svg.js').SVG
+const DOM=require('./libraries/dom')
 
+let draw = SVG().addTo('body').size('100vw','100vh')
+
+
+
+
+
+
+
+
+
+
+
+
+
+//************************************* */
 let elemloading;
 let map_config;
 let tiles;
@@ -9,7 +26,7 @@ let currentW, currentH;
 let posX = 0, posY = 0, movementX = 0, movementY = 0;
 let dragX, dragY;
 
-let main = () => {
+let main = _ => {
 	loading(true);
 	fs.readFile("config.json", (e, data) => {
 		let obj = JSON.parse(data);
@@ -20,10 +37,10 @@ let main = () => {
 
 let loading = b => {
 	if (b) {
-		elemloading = document.createElement('div');
-		elemloading.id = 'loading';
-		elemloading.innerText = "The game is loading...";//Find some funnier text to show
-		document.body.appendChild(elemloading);
+		elemloading = draw.text('The game is loading...')
+		elemloading.font({ fill: '#ccc', family: 'Inconsolata', size:'64', anchor: 'middle' })
+		.center(DOM.vwTOpx(draw.width())*0.5, DOM.vhTOpx(draw.height())*0.5)// when resize change it!!!!!!!!!!!!!!
+		elemloading.animate(3000).ease()// NEXT THING TO DO
 	}
 	else {
 		elemloading.style.opacity = 0;

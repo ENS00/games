@@ -17,7 +17,7 @@ function createWindow() {
   updateCoordinates=(x,y)=>mainWindow.webContents.send('newCoords', x, y);
 
   // and load the index.html of the app.
-  mainWindow.loadFile('tests/test_svg.htm')//index.htm
+  mainWindow.loadFile('index.htm')
 
   let windowCoords;
   let menu = new Menu();

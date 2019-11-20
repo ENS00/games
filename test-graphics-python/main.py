@@ -18,15 +18,14 @@ class Square():
     def __init__(self, x, y, size, color):
         self.shape = canvas.create_rectangle(x,y,x+size,y+size,fill=color,tags=('square'))
 
-def squareGenerator():
+def moveSquare():
     global posx
     global posy
     global incx
     global incy
-    canvas.delete('square')
-    Square(posx, posy, SIZE, '#444')
     posx+=incx
     posy+=incy
+    canvas.moveto('square',posx,posy)
     if posx+SIZE>=WIDTH:
         incx=-1
     if posx<=0:
@@ -35,10 +34,11 @@ def squareGenerator():
         incy=-1
     if posy<=0:
         incy=1
-    tk.after(50,squareGenerator)
+    tk.after(50,moveSquare)
 
-# a = Button(tk, text="Restart", command=squareGenerator)
+# a = Button(tk, text="Restart", command=moveSquare)
 # a.place(x = WIDTH/2, y = HEIGHT/2)
 # canvas.create_rectangle(0,0,WIDTH,HEIGHT,fill=BGCOLOR)
-tk.after(10,squareGenerator)
+Square(posx, posy, SIZE, '#444')
+tk.after(10,moveSquare)
 tk.mainloop()

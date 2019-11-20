@@ -1,8 +1,9 @@
 const ipc = require('electron').ipcRenderer
+const SVG=require('@svgdotjs/svg.js').SVG
 const fs = require('fs')
 const {Tile} = require('./libraries/game')
-const SVG=require('@svgdotjs/svg.js').SVG
 const DOM=require('./libraries/dom')
+const phrases=require('./libraries/phrases')
 
 let draw = SVG().addTo('body').size('100vw','100vh')
 
@@ -37,15 +38,15 @@ let main = _ => {
 
 let loading = b => {
 	if (b) {
-		elemloading = draw.text('The game is loading...')
+		elemloading = draw.text(phrases.getRandomPhrase())
 		elemloading.font({ fill: '#ccc', family: 'Inconsolata', size:'64', anchor: 'middle' })
+		.css({opacity:0})
 		.center(DOM.vwTOpx(draw.width())*0.5, DOM.vhTOpx(draw.height())*0.5)// when resize change it!!!!!!!!!!!!!!
-		elemloading.animate(3000).ease()// NEXT THING TO DO
+		.animate(2000, '<>')
+		.css({opacity:1})//.finish()
 	}
 	else {
-		elemloading.style.opacity = 0;
-		elemloading.style.animationName = 'fadein';
-		elemloading.addEventListener('animationend', () => document.body.removeChild(elemloading), false);
+		elemloading.animate(2000, '<>').css({opacity:0})
 	}
 }
 
@@ -59,43 +60,32 @@ let setMapConfig = configJSON => {
 			map_config.map.seed = Math.random();
 		ipc.send('logWindow', "seed: " + map_config.map.seed);
 		noise.seed(map_config.map.seed);
-		map_config.element = document.getElementById("map");
-		currentW = map_config.element.offsetWidth;
-		currentH = map_config.element.offsetHeight;
-		generateCSS();
+		currentW = document.body.offsetWidth;
+		currentH = document.body.offsetHeight;
+		loadImages();
 		rendertiles("create");
-		document.body.onresize = () => rendertiles("resize");
-		map_config.element.ondragstart = (e) => {
+		document.body.onresize = () => elemloading.center(DOM.vwTOpx(draw.width())*0.5, DOM.vhTOpx(draw.height())*0.5)//rendertiles("resize");
+		document.body.ondragstart = (e) => {
 			dragX = e.x;
 			dragY = e.y;
 		}
-		map_config.element.ondragend = (e) => {
+		document.body.ondragend = (e) => {
 			movementX = Math.round((dragX - e.x) / map_config.tile.dimensions);
 			movementY = Math.round((dragY - e.y) / map_config.tile.dimensions);
-			moveTiles();
+			//moveTiles();
 		}
 	}
 	else
 		throw new Error("Invalid configuration file " + configJSON.filename);
 }
 
-let generateCSS = () => {
-	let css = document.createElement("style");
-	css.innerHTML = ".tile{ width:" + map_config.tile.dimensions + "px;height:" + map_config.tile.dimensions + "px}";
-	document.head.appendChild(css);
-	//loading images...
-	let i = 0;
-	let downloadingImage = new Image();
-	downloadingImage.onload = () => {
-		i++;
-		if (i < map_config.tileset.length)
-			downloadingImage.src = map_config.tileset[i].img;
-	};
-	downloadingImage.src = map_config.tileset[i].img;
+let loadImages = () => {
+	for(let i=0; i < map_config.tileset.length;i++)
+		map_config.tileset[i].image=draw.image(map_config.tileset[i].img)
 }
 
 let rendertiles = (rendertype) => {
-	if (rendertype === "create") {
+	if (rendertype === "create") {/*
 		let maxX = Math.floor(calcMaxXTiles() / 2),
 			minX = -Math.ceil(calcMaxXTiles() / 2),
 			maxY = Math.floor(calcMaxYTiles() / 2),
@@ -106,8 +96,8 @@ let rendertiles = (rendertype) => {
 				createTile(i, j);
 			for (let i = minX + (minX % 2 === 0); i < maxX; i += 2)
 				createTile(i, j);
-		}
-		loading(false);
+		}*/
+		loading(false)
 	}
 	else
 		if (rendertype === "resize") {

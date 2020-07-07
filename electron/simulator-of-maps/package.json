@@ -13,7 +13,7 @@
   "author": "ENSOO",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^6.0.12"
+    "electron": "^9.1.0"
   },
   "dependencies": {
     "@svgdotjs/svg.js": "^3.0.16"

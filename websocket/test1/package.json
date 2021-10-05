@@ -6,7 +6,7 @@
     "main": "server.js",
     "dependencies": {
         "fastify": "^2.15.1",
-        "fastify-static": "^2.5.0",
+        "fastify-static": "^4.2.4",
         "fastify-websocket": "^0.6.0"
     }
 }
